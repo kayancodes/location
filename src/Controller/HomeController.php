@@ -69,7 +69,7 @@ class HomeController extends AbstractController
         
         if($form->isSubmitted() && $form->isValid()){
 
-            $session->set('commande', $commande);
+            $session->set('form', $form);
         
         }
 
