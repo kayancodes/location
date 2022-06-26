@@ -1,0 +1,35 @@
+{% extends "base.html.twig"  %}
+
+
+{% block title %} Page d'accueil {% endblock %}
+
+
+{% block body %}
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    {# <img src="{{ asset('img/accueil.jpeg') }}" alt=« «  style="height: 400px;> #}
+    style="background-image: url('https://cdn.teslanorth.com/wp-content/uploads/2021/10/tesla-hero-desktop.jpeg');height: 390px; width:100%; background-repeat: no-repeat;">
+    
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">TESLA LOCA</h1>
+          <h4 class="mb-3">Location de voiture TESLA 24/24 et 7j/7</h4>
+          {# <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+          >Call to action</a
+          > #}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+
+    <div class="d-flex justify-content-center moteurDeRecherche" style="min">
+        {% include "commun/form-search.html.twig" %}
+        {# <h1>Page d'accueil <small class="fs-5">{{app.user ? "bienvenu " ~ app.user.prenom : ""}}<small></h1> #}
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des vehicules disponibles{% endblock %}
+
+{% block body %}
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    {# <img src="{{ asset('img/accueil.jpeg') }}" alt=« «  style="height: 400px;> #}
+    style="background-image: url('https://cdn.teslanorth.com/wp-content/uploads/2021/10/tesla-hero-desktop.jpeg');height: 390px; width:100%; background-repeat: no-repeat;">
+    
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          {# <h1 class="mb-3">Bienvenue à bord</h1>
+          <h4 class="mb-3">Location de voiture TESLA 24/24 et 7j/7</h4> #}
+          {# <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+          >Call to action</a
+          > #}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+
+
+    <div class="d-flex justify-content-center moteurDeRecherche" style="min">
+        {% include "commun/form-search.html.twig" %}
+    </div>
+
+    <h1 class="text-center" style="margin-bottom:30px">Liste des vehicules disponibles</h1>
+
+            {% for vehicule in vehicules %}
+            <article class="row" style="padding-bottom:50px; margin-bottom:50px; border-bottom:1px solid #DCDCDC">
+                <figure class="offset-3 col-3"> 
+                    <img src="/upload{{ asset(vehicule.photo)}}" alt="" class="img-fluid">
+                </figure>
+                <div class="col-3">
+                    <h2>{{vehicule.titre}}</h2>
+                    <p>{{vehicule.prixJournalier | deviseFr}}</p>
+                    <p>{{vehicule.description}}</p>
+                    <a href="{{ path("home_rent" ,  {"id" :  vehicule.id }) }}" class="btn btn-secondary" style="border-radius:0px">Louer</a>
+                </div>
+            </article>
+            {% else %}
+                    <p class="alert alert-danger">aucun vehicule enregistré pour le moment</p>
+            {% endfor %}
+{% endblock %}

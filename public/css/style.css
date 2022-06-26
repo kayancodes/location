@@ -1,0 +1,45 @@
+
+
+/* ul.navbar-nav.ms-auto{
+    width: 300px;
+    justify-content: flex-end;
+} */
+
+li.nav-item{
+    display: flex;
+}
+
+
+.page-header{
+    padding-top:0px;
+    margin: 0px 0 0px;
+    vertical-align: top;
+}
+
+
+.moteurDeRecherche{
+margin-bottom: 50px;
+}
+
+
+
+#registration_form_save{
+    width:120px; 
+    height:50px; 
+    border-radius:0px;
+    background-color: #868e96;
+    border:1px solid #868e96;
+}
+
+/* 
+.dtDebut{
+    border: 1px solid green;
+}
+
+.dtfin{
+    border: 1px solid blue;
+}
+
+.recherche{
+    border: 1px solid pink;
+} */
